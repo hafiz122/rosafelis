@@ -1,0 +1,235 @@
+---
+title: "Chapter 2 · Infinite Sequences and Series"
+subtitle: "Convergence tests, power series, and Taylor series"
+author: hafiz122
+---
+
+::: {.content-visible when-format="html"}
+<div class="downloads">
+<a href="../viewer.html?doc=ch2-problems">View problems PDF</a>
+<a href="../pdfs/ch2-problems.pdf" download>Download problems</a>
+<a href="../viewer.html?doc=ch2-solutions">View solutions PDF</a>
+<a href="../pdfs/ch2-solutions.pdf" download>Download solutions</a>
+</div>
+:::
+
+## Sequences
+
+### Exercise 2.1
+
+Find $\displaystyle\lim_{n\to\infty}\frac{3n^2-2n+1}{n^2+4}$ and justify the algebraic step that reveals the limit.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Divide numerator and denominator by the highest power $n^2$:
+$$\frac{3n^2-2n+1}{n^2+4}=\frac{3-2/n+1/n^2}{1+4/n^2}.$$
+Since $1/n\to0$ and $1/n^2\to0$, the quotient limit law applies because the denominator tends to $1\ne0$. Therefore the sequence tends to $3/1=3$.
+:::
+::::
+
+### Exercise 2.2
+
+Let $a_1=1$ and $a_{n+1}=\sqrt{2+a_n}$. Show that $(a_n)$ converges and find its limit.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+First, $a_1=1<2$. If $a_n<2$, then $a_{n+1}=\sqrt{2+a_n}<\sqrt4=2$, so induction shows $a_n<2$ for all $n$. The sequence is increasing: $a_2=\sqrt3>1$, and if $a_n>a_{n-1}$, then the increasing square-root function gives $a_{n+1}>a_n$. Thus it is increasing and bounded above, so it converges.
+
+Write its limit as $L$. Continuity of the square root gives $L=\sqrt{2+L}$. Squaring yields $L^2-L-2=(L-2)(L+1)=0$. Since every term is positive, $L\geq0$, so $L=2$.
+:::
+::::
+
+## Series
+
+### Exercise 2.3
+
+Determine whether $\displaystyle\sum_{n=0}^{\infty}5\left(\frac25\right)^n$ converges, and find its sum if it does.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+This is geometric with first term $a=5$ and ratio $r=2/5$. Since $|r|<1$, it converges. The sum is
+$$\frac{a}{1-r}=\frac{5}{1-2/5}=\frac{5}{3/5}=\frac{25}{3}.$$
+:::
+::::
+
+### Exercise 2.4
+
+Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}$ by writing its partial sums.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Partial fractions give $1/[n(n+1)]=1/n-1/(n+1)$. The $N$th partial sum telescopes:
+$$S_N=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1N-\frac1{N+1}\right)=1-\frac1{N+1}.$$
+Since $1/(N+1)\to0$, the infinite sum is $\lim_{N\to\infty}S_N=1$.
+:::
+::::
+
+## The integral test and estimates of sums
+
+### Exercise 2.5
+
+Use the integral test to decide whether $\displaystyle\sum_{n=1}^{\infty}\frac1{n^2}$ converges. Bound the remainder after its first $10$ terms.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The function $f(x)=x^{-2}$ is positive, continuous, and decreasing for $x\geq1$. Its improper integral is
+$$\int_1^\infty x^{-2}\,dx=\lim_{b\to\infty}\left[-\frac1x\right]_1^b=1,$$
+which is finite, so the series converges. For a positive decreasing $f$, the integral remainder bounds give
+$$\int_{11}^{\infty}\frac{dx}{x^2}\leq R_{10}\leq\int_{10}^{\infty}\frac{dx}{x^2}.$$
+Evaluating the integrals gives $1/11\leq R_{10}\leq1/10$.
+:::
+::::
+
+### Exercise 2.6
+
+Use the integral test to decide whether $\displaystyle\sum_{n=2}^{\infty}\frac1{n\ln n}$ converges.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For $x\geq2$, $f(x)=1/(x\ln x)$ is positive and continuous. Its denominator increases, so $f$ decreases. Substitute $u=\ln x$, $du=dx/x$:
+$$\int_2^b\frac{dx}{x\ln x}=\int_{\ln2}^{\ln b}\frac{du}{u}=\ln(\ln b)-\ln(\ln2).$$
+As $b\to\infty$, $\ln(\ln b)\to\infty$. The integral diverges, and therefore the series diverges.
+:::
+::::
+
+## The comparison test
+
+### Exercise 2.7
+
+Decide whether $\displaystyle\sum_{n=1}^{\infty}\frac{3n+1}{n^3+2}$ converges. Use a direct comparison.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For $n\geq1$, $3n+1\leq4n$ and $n^3+2\geq n^3$. Hence
+$$0\leq\frac{3n+1}{n^3+2}\leq\frac{4n}{n^3}=\frac4{n^2}.$$
+The comparison series $4\sum 1/n^2$ converges because it is a $p$-series with $p=2>1$. By the direct comparison test, the given series converges.
+:::
+::::
+
+### Exercise 2.8
+
+Decide whether $\displaystyle\sum_{n=1}^{\infty}\frac1{\sqrt{n^2+1}}$ converges. Use a comparison that proves your conclusion.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For $n\geq1$, $n^2+1\leq2n^2$, so $\sqrt{n^2+1}\leq\sqrt2\,n$. Taking reciprocals of positive quantities gives
+$$\frac1{\sqrt{n^2+1}}\geq\frac1{\sqrt2\,n}.$$
+The right-hand series is a constant multiple of the divergent harmonic series. The given positive-term series therefore diverges by direct comparison.
+:::
+::::
+
+## Absolute convergence and the ratio and root tests
+
+### Exercise 2.9
+
+Use the ratio test to determine whether $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{n}{3^n}$ converges absolutely.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Test the absolute terms $b_n=n/3^n$:
+$$\frac{b_{n+1}}{b_n}=\frac{(n+1)/3^{n+1}}{n/3^n}=\frac{n+1}{3n}\longrightarrow\frac13<1.$$
+The ratio test shows $\sum b_n$ converges. Therefore the original alternating series converges absolutely, which also implies ordinary convergence.
+:::
+::::
+
+### Exercise 2.10
+
+Use the root test on $\displaystyle\sum_{n=1}^{\infty}(-1)^n\left(\frac{2n+1}{3n+1}\right)^n$. Then explain why the ratio or root test does not settle the absolute convergence of $\sum_{n=1}^{\infty}(-1)^{n+1}/n$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For the first series, the absolute $n$th-root is exactly
+$$\sqrt[n]{\left|(-1)^n\left(\frac{2n+1}{3n+1}\right)^n\right|}=\frac{2n+1}{3n+1}\longrightarrow\frac23<1.$$
+The root test proves absolute convergence.
+
+For the alternating harmonic series, the absolute terms are $1/n$. Their ratio $(1/(n+1))/(1/n)=n/(n+1)$ tends to $1$, and their $n$th-root $(1/n)^{1/n}$ also tends to $1$. Both tests are inconclusive at $1$. In fact $\sum1/n$ diverges, while $\sum(-1)^{n+1}/n$ converges by the alternating series test, so its convergence is conditional.
+:::
+::::
+
+## Strategy for testing series
+
+### Exercise 2.11
+
+Choose and justify an efficient test for $\displaystyle\sum_{n=1}^{\infty}\frac{n+2}{n^3+1}$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The terms are positive, and their dominant powers suggest comparison with $1/n^2$. Indeed,
+$$\lim_{n\to\infty}\frac{(n+2)/(n^3+1)}{1/n^2}
+=\lim_{n\to\infty}\frac{n^3+2n^2}{n^3+1}=1.$$
+The limit is finite and positive. Since $\sum1/n^2$ converges, the limit comparison test proves that the given series converges. Checking dominant powers is faster here than expanding a ratio of consecutive terms.
+:::
+::::
+
+### Exercise 2.12
+
+Choose appropriate tests to classify $\displaystyle\sum_{n=1}^{\infty}(-1)^{n+1}\frac{\sqrt n}{n+1}$ as absolutely convergent, conditionally convergent, or divergent.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Set $b_n=\sqrt n/(n+1)$. We have $b_n\to0$ because $b_n=(1/\sqrt n)/(1+1/n)$. The function $b(x)=\sqrt x/(x+1)$ has derivative
+$$b'(x)=\frac{1-x}{2\sqrt x(x+1)^2}\leq0\quad(x\geq1),$$
+so $b_n$ decreases. The alternating series test proves convergence.
+
+For absolute convergence, compare $b_n$ to $1/\sqrt n$:
+$$\lim_{n\to\infty}\frac{b_n}{1/\sqrt n}=\lim_{n\to\infty}\frac{n}{n+1}=1.$$
+The $p$-series $\sum n^{-1/2}$ diverges, so the absolute series diverges by limit comparison. The original series is conditionally convergent.
+:::
+::::
+
+## Power series
+
+### Exercise 2.13
+
+Find the radius and interval of convergence of $\displaystyle\sum_{n=1}^{\infty}\frac{(x-2)^n}{n3^n}$, checking both endpoints separately.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For the absolute terms, the ratio tends to $|x-2|/3$. Thus the series converges absolutely when $|x-2|<3$ and diverges when $|x-2|>3$, giving radius $R=3$.
+
+At $x=5$, the terms become $3^n/(n3^n)=1/n$, so the series diverges. At $x=-1$, they become $(-3)^n/(n3^n)=(-1)^n/n$, which converges by the alternating series test. The interval is therefore $[-1,5)$.
+:::
+::::
+
+### Exercise 2.14
+
+Starting from $\displaystyle\sum_{n=0}^{\infty}x^n=1/(1-x)$ for $|x|<1$, derive a formula for $\displaystyle\sum_{n=1}^{\infty}n x^{n-1}$ and evaluate the series at $x=1/2$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+A power series can be differentiated term by term inside its radius of convergence. Differentiating both sides gives
+$$\sum_{n=1}^{\infty}n x^{n-1}=\frac{d}{dx}(1-x)^{-1}=(1-x)^{-2},\qquad |x|<1.$$
+Since $1/2$ lies inside that interval, substitution gives
+$$\sum_{n=1}^{\infty}\frac{n}{2^{n-1}}=\frac1{(1-1/2)^2}=4.$$
+:::
+::::
+
+## Maclaurin and Taylor series
+
+### Exercise 2.15
+
+Find the degree-three Maclaurin polynomial for $e^x$, use it to approximate $e^{0.2}$, and bound the error with Taylor's theorem.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Every derivative of $e^x$ equals $e^x$, and at $0$ each equals $1$. Thus
+$$P_3(x)=1+x+\frac{x^2}{2}+\frac{x^3}{6}.$$
+At $x=0.2$, $P_3(0.2)=1+0.2+0.02+0.008/6=1.221333\ldots$. Taylor's remainder has the form $R_3(0.2)=e^c(0.2)^4/4!$ for some $c\in(0,0.2)$. Since $e^c\leq e^{0.2}<e<3$,
+$$|R_3(0.2)|<\frac{3(0.2)^4}{24}=0.0002.$$
+Therefore $e^{0.2}$ is within $0.0002$ of $1.221333\ldots$.
+:::
+::::
+
+### Exercise 2.16
+
+Derive the degree-five Maclaurin polynomial for $\sin x$. Use it to approximate $\sin(0.3)$ and give a simple error bound.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The derivatives of $\sin x$ cycle through $\sin x,\cos x,-\sin x,-\cos x$. At $0$, their values are $0,1,0,-1,0,1$, so
+$$P_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}.$$
+At $0.3$, this is $0.3-0.027/6+0.00243/120=0.29552025$. The degree-six coefficient is zero at $0$, but Taylor's theorem after degree five uses a sixth derivative bounded in absolute value by $1$. Hence
+$$|R_5(0.3)|\leq\frac{0.3^6}{6!}=1.0125\times10^{-6}.$$
+The approximation is therefore accurate within about one millionth.
+:::
+::::

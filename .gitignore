@@ -1,0 +1,13 @@
+/.quarto/
+/_site/
+/node_modules/
+/assets/
+/.DS_Store
+*.aux
+*.log
+*.out
+*.toc
+*.tex
+*.pdf
+
+**/*.quarto_ipynb

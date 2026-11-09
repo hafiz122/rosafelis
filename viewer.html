@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF viewer · Rosafelis</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="./index.html">Rosafelis</a>
+    <span id="document-title">PDF viewer</span>
+  </header>
+  <nav class="toolbar" aria-label="PDF controls">
+    <button id="previous" type="button" aria-label="Previous page">Previous</button>
+    <span><span id="page-number">1</span> / <span id="page-count">–</span></span>
+    <button id="next" type="button" aria-label="Next page">Next</button>
+    <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+    <span id="zoom-level">100%</span>
+    <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+    <a id="open-pdf" target="_blank" rel="noopener">Open PDF</a>
+    <a id="download-pdf" download>Download</a>
+  </nav>
+  <main id="pdf-region" aria-live="polite">
+    <p id="status">Loading PDF…</p>
+    <canvas id="pdf-canvas" aria-label="PDF page"></canvas>
+  </main>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>

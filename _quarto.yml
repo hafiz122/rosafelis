@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - chapters/*.qmd
+  resources:
+    - viewer.html
+    - viewer.js
+    - viewer.css
+    - assets/pdf.mjs
+    - assets/pdf.worker.mjs
+    - assets/pdfjs-LICENSE.txt
+
+website:
+  title: Rosafelis
+  site-url: https://hafiz122.github.io/rosafelis/
+  description: Worked calculus problem sets by hafiz122
+  navbar:
+    title: Rosafelis
+    left:
+      - href: index.qmd
+        text: Home
+      - href: chapters/ch1.qmd
+        text: 1 · Limits
+      - href: chapters/ch2.qmd
+        text: 2 · Series
+      - href: chapters/ch3.qmd
+        text: 3 · Polar
+      - href: chapters/ch4.qmd
+        text: 4 · Partial derivatives
+  page-footer:
+    left: "Rosafelis · problem sets by hafiz122"
+    right: "Written in Markdown with LaTeX mathematics"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    callout-appearance: minimal
+    callout-icon: false
+    format-links: false
+  pdf:
+    documentclass: article
+    geometry: margin=0.85in
+    fontsize: 11pt
+    colorlinks: true
+    callout-icon: false
+
+execute:
+  freeze: false

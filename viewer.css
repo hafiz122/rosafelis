@@ -1,0 +1,15 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #ede8e8; color: #30272b; font: 16px/1.45 system-ui, sans-serif; }
+header { display: flex; gap: 1.4rem; align-items: center; padding: .9rem 1.25rem; background: #fffdfb; border-bottom: 1px solid #e7d9dd; }
+.brand { color: #53313d; font: 700 1.2rem Georgia, serif; text-decoration: none; }
+#document-title { font-weight: 600; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .65rem 1.25rem; background: #fffdfb; border-bottom: 1px solid #e7d9dd; }
+.toolbar button, .toolbar a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: .45rem .7rem; border: 1px solid #d5c3ca; border-radius: 4px; background: white; color: #53313d; font: 600 .9rem system-ui, sans-serif; text-decoration: none; cursor: pointer; }
+.toolbar button:hover, .toolbar a:hover { background: #f8eef1; border-color: #9a455f; }
+.toolbar button:disabled { opacity: .45; cursor: not-allowed; }
+.toolbar :focus-visible { outline: 3px solid #9a455f; outline-offset: 2px; }
+#pdf-region { min-height: calc(100dvh - 115px); padding: 1.2rem; text-align: center; overflow: auto; }
+#pdf-canvas { display: none; max-width: none; background: white; box-shadow: 0 2px 12px #34242b2b; }
+#status { margin: 3rem auto; }
+@media (max-width: 650px) { header { align-items: baseline; flex-direction: column; gap: .15rem; } .toolbar { justify-content: center; padding: .5rem; } .toolbar button, .toolbar a { padding: .4rem .5rem; } #pdf-region { padding: .7rem; } }

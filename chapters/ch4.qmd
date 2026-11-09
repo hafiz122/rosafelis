@@ -1,0 +1,177 @@
+---
+title: "Chapter 4 · Partial Derivatives"
+subtitle: "Several variables, limits, tangent planes, and extrema"
+author: hafiz122
+---
+
+::: {.content-visible when-format="html"}
+<div class="downloads">
+<a href="../viewer.html?doc=ch4-problems">View problems PDF</a>
+<a href="../pdfs/ch4-problems.pdf" download>Download problems</a>
+<a href="../viewer.html?doc=ch4-solutions">View solutions PDF</a>
+<a href="../pdfs/ch4-solutions.pdf" download>Download solutions</a>
+</div>
+:::
+
+## Functions of several variables
+
+### Exercise 4.1
+
+Find and describe the domain of $f(x,y)=\sqrt{9-x^2-y^2}/(x-y)$. Identify which parts of the boundary circle belong to the domain.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For the square root to be real, $9-x^2-y^2\geq0$, or $x^2+y^2\leq9$. The denominator must also be nonzero, so $x\ne y$. Thus
+$$D=\{(x,y):x^2+y^2\leq9\text{ and }x\ne y\}.$$
+Geometrically, this is the closed disk of radius $3$ with the line segment $y=x$ removed. Points on the boundary circle are included except where $y=x$. Solving $2x^2=9$ gives the two excluded boundary points $(3/\sqrt2,3/\sqrt2)$ and $(-3/\sqrt2,-3/\sqrt2)$.
+:::
+::::
+
+### Exercise 4.2
+
+For $f(x,y)=x^2+y^2$, describe the level curves $f(x,y)=1$, $f(x,y)=4$, and $f(x,y)=9$. What does the spacing between them say about the rate of change along the positive $x$-axis?
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Setting $f=c$ gives $x^2+y^2=c$, a circle centered at the origin with radius $\sqrt c$. The three level curves have radii $1$, $2$, and $3$. Their radial spacing is one unit for each increase of the level by $3$ and then $5$, respectively. Along the positive $x$-axis, $f(x,0)=x^2$, whose derivative is $2x$. Hence the rate of increase grows as we move outward; equal outward steps produce larger changes in $f$.
+:::
+::::
+
+## Limits and Continuity
+
+### Exercise 4.3
+
+Determine whether $\displaystyle\lim_{(x,y)\to(0,0)}\frac{xy}{x^2+y^2}$ exists. Compare two paths.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Along the $x$-axis, $y=0$ and the quotient is $0$, so the limit along that path is $0$. Along the line $y=x$, for $x\ne0$,
+$$\frac{x\cdot x}{x^2+x^2}=\frac{x^2}{2x^2}=\frac12.$$
+The path limits differ, so there is no single limit as $(x,y)\to(0,0)$. Defining any value at the origin could not make this function continuous there.
+:::
+::::
+
+### Exercise 4.4
+
+Let $g(x,y)=x^2y/(x^2+y^2)$ away from $(0,0)$ and $g(0,0)=0$. Prove that $g$ is continuous at the origin.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+For $(x,y)\ne(0,0)$, since $x^2\leq x^2+y^2$,
+$$|g(x,y)|=|y|\frac{x^2}{x^2+y^2}\leq|y|\leq\sqrt{x^2+y^2}.$$
+As $(x,y)\to(0,0)$, the right-hand side tends to $0$. The squeeze theorem gives $\lim g(x,y)=0=g(0,0)$, which is the definition of continuity at the origin.
+:::
+::::
+
+## Partial derivatives
+
+### Exercise 4.5
+
+For $f(x,y)=x^2y+e^{xy}$, find $f_x$ and $f_y$ and evaluate both at $(1,0)$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Hold $y$ fixed for $f_x$ and apply the chain rule to $e^{xy}$:
+$$f_x(x,y)=2xy+ye^{xy}.$$
+Hold $x$ fixed for $f_y$:
+$$f_y(x,y)=x^2+xe^{xy}.$$
+At $(1,0)$, $e^{xy}=e^0=1$, so $f_x(1,0)=0+0=0$ and $f_y(1,0)=1+1=2$.
+:::
+::::
+
+### Exercise 4.6
+
+For $f(x,y)=\ln(x^2+y^2)$, calculate $f_{xy}$ and $f_{yx}$ wherever the function is defined. Evaluate them at $(1,1)$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The domain excludes $(0,0)$. First derivatives are
+$$f_x=\frac{2x}{x^2+y^2},\qquad f_y=\frac{2y}{x^2+y^2}.$$
+Differentiate $f_x$ with respect to $y$ and $f_y$ with respect to $x$:
+$$f_{xy}=-\frac{4xy}{(x^2+y^2)^2},\qquad f_{yx}=-\frac{4xy}{(x^2+y^2)^2}.$$
+They agree, as expected for a smooth function on its domain. At $(1,1)$ each equals $-4/(2^2)=-1$.
+:::
+::::
+
+## Tangent planes and linear approximation
+
+### Exercise 4.7
+
+Find the tangent plane to $z=x^2+xy+y^2$ at $(x,y)=(1,2)$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The surface height is $f(1,2)=1+2+4=7$. Its partial derivatives are $f_x=2x+y$ and $f_y=x+2y$, giving $f_x(1,2)=4$ and $f_y(1,2)=5$. The tangent-plane formula is
+$$z=f(1,2)+f_x(1,2)(x-1)+f_y(1,2)(y-2),$$
+so $z=7+4(x-1)+5(y-2)$, equivalently $z=4x+5y-7$.
+:::
+::::
+
+### Exercise 4.8
+
+Use a linear approximation at $(1,1)$ to estimate $\sqrt{4+(1.02)^2+(0.97)^2}$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Let $f(x,y)=\sqrt{4+x^2+y^2}$. At $(1,1)$, $f=\sqrt6$. The partial derivatives are
+$$f_x=\frac{x}{\sqrt{4+x^2+y^2}},\qquad f_y=\frac{y}{\sqrt{4+x^2+y^2}},$$
+so both equal $1/\sqrt6$ at $(1,1)$. The changes are $\Delta x=0.02$ and $\Delta y=-0.03$. Therefore
+$$f(1.02,0.97)\approx f(1,1)+f_x\Delta x+f_y\Delta y
+=\sqrt6+\frac{0.02-0.03}{\sqrt6}
+=\sqrt6-\frac{0.01}{\sqrt6}\approx2.4454.$$
+:::
+::::
+
+## The chain rule
+
+### Exercise 4.9
+
+Let $z=x^2y$, with $x=t^2$ and $y=\sin t$. Use the multivariable chain rule to find $dz/dt$ at $t=1$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The chain rule gives $dz/dt=z_x(dx/dt)+z_y(dy/dt)$. Here $z_x=2xy$, $z_y=x^2$, $dx/dt=2t$, and $dy/dt=\cos t$. Substituting $x=t^2$ and $y=\sin t$ gives
+$$\frac{dz}{dt}=(2t^2\sin t)(2t)+(t^2)^2\cos t=4t^3\sin t+t^4\cos t.$$
+At $t=1$, the answer is $4\sin1+\cos1$. Directly differentiating $z=t^4\sin t$ gives the same result.
+:::
+::::
+
+### Exercise 4.10
+
+Let $z=e^{xy}$, $x=u+v$, and $y=u-v$. Find $\partial z/\partial u$ and $\partial z/\partial v$, then evaluate both at $(u,v)=(1,2)$.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Since $z_x=ye^{xy}$ and $z_y=xe^{xy}$, the chain rule gives
+$$z_u=z_xx_u+z_yy_u=(x+y)e^{xy}=2u e^{u^2-v^2},$$
+because $x_u=y_u=1$ and $xy=(u+v)(u-v)=u^2-v^2$. Similarly, $x_v=1$ and $y_v=-1$, so
+$$z_v=(y-x)e^{xy}=-2v e^{u^2-v^2}.$$
+At $(1,2)$, $u^2-v^2=-3$. Thus $z_u(1,2)=2e^{-3}$ and $z_v(1,2)=-4e^{-3}$.
+:::
+::::
+
+## Maximum and minimum values
+
+### Exercise 4.11
+
+Find the global minimum of $f(x,y)=x^2+y^2-4x+6y$ on $\mathbb R^2$. Does it have a global maximum?
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+Complete the square in each variable:
+$$f(x,y)=(x-2)^2+(y+3)^2-13.$$
+Both squares are nonnegative and vanish together only at $(2,-3)$. Hence the global minimum is $-13$ at $(2,-3)$. As $x$ or $y$ grows without bound, the sum of squares grows without bound, so no global maximum exists on $\mathbb R^2$.
+:::
+::::
+
+### Exercise 4.12
+
+Find the absolute maximum and minimum of $f(x,y)=xy$ on the closed disk $x^2+y^2\leq4$. Explain why the interior critical point is not an extremum.
+
+:::: {.content-visible unless-profile="student"}
+::: {.callout-note collapse="true" title="Show solution"}
+The disk is compact and $f$ is continuous, so absolute extrema exist. Inside the disk, $f_x=y$ and $f_y=x$ vanish together only at $(0,0)$, where $f=0$. Nearby points with $x=y>0$ have $xy>0$, while points with $x=-y>0$ have $xy<0$, so the origin is a saddle point.
+
+On the boundary $x^2+y^2=4$, the inequalities $(x-y)^2\geq0$ and $(x+y)^2\geq0$ give $-2\leq xy\leq2$. Equality $xy=2$ occurs at $(\sqrt2,\sqrt2)$ and $(-\sqrt2,-\sqrt2)$. Equality $xy=-2$ occurs at $(\sqrt2,-\sqrt2)$ and $(-\sqrt2,\sqrt2)$. Thus the absolute maximum is $2$ and the absolute minimum is $-2$.
+:::
+::::

@@ -1,0 +1,12 @@
+{
+  "name": "rosafelis",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Calculus problem sets and PDF viewer",
+  "scripts": {
+    "prepare-viewer": "node scripts/prepare-viewer.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "5.4.449"
+  }
+}
