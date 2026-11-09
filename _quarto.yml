@@ -11,6 +11,9 @@ project:
     - assets/pdf.mjs
     - assets/pdf.worker.mjs
     - assets/pdfjs-LICENSE.txt
+    - fonts/*.otf
+    - fonts/OFL.txt
+    - latex/monochrome.tex
 
 website:
   title: Rosafelis
@@ -30,8 +33,7 @@ website:
       - href: chapters/ch4.qmd
         text: 4 · Partial derivatives
   page-footer:
-    left: "Rosafelis · problem sets by hafiz122"
-    right: "Written in Markdown with LaTeX mathematics"
+    left: "problem sets by hafiz122"
 
 format:
   html:
@@ -47,8 +49,9 @@ format:
     documentclass: article
     geometry: margin=0.85in
     fontsize: 11pt
-    colorlinks: true
+    colorlinks: false
     callout-icon: false
+    include-in-header: latex/monochrome.tex
 
 execute:
   freeze: false

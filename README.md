@@ -19,3 +19,5 @@ The site is written to `_site/`. Open it through a local HTTP server rather than
 ## Publishing
 
 The GitHub Actions workflow renders the website and eight chapter PDFs and deploys them to GitHub Pages. It uploads the generated files as an artifact without committing them to the repository.
+
+The site uses CMU Serif from the Computer Modern Unicode family. Its SIL Open Font License is in `fonts/OFL.txt`. The PDF.js license is included with the generated viewer assets.
