@@ -67,28 +67,28 @@ As $(x,y)\to(0,0)$, the right-hand side tends to $0$. The squeeze theorem gives 
 
 ### Exercise 4.5
 
-For $f(x,y)=x^2y+e^{xy}$, find $f_x$ and $f_y$ and evaluate both at $(1,0)$.
+For $f(x,y)=x^2y+e^{xy}$, find $\dfrac{\partial f}{\partial x}$ and $\dfrac{\partial f}{\partial y}$ and evaluate both at $(1,0)$.
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
-Hold $y$ fixed for $f_x$ and apply the chain rule to $e^{xy}$:
-$$f_x(x,y)=2xy+ye^{xy}.$$
-Hold $x$ fixed for $f_y$:
-$$f_y(x,y)=x^2+xe^{xy}.$$
-At $(1,0)$, $e^{xy}=e^0=1$, so $f_x(1,0)=0+0=0$ and $f_y(1,0)=1+1=2$.
+Hold $y$ fixed when differentiating with respect to $x$, and apply the chain rule to $e^{xy}$:
+$$\frac{\partial f}{\partial x}=2xy+ye^{xy}.$$
+Hold $x$ fixed when differentiating with respect to $y$:
+$$\frac{\partial f}{\partial y}=x^2+xe^{xy}.$$
+At $(1,0)$, $e^{xy}=e^0=1$, so $\left.\dfrac{\partial f}{\partial x}\right|_{(1,0)}=0$ and $\left.\dfrac{\partial f}{\partial y}\right|_{(1,0)}=1+1=2$.
 :::
 ::::
 
 ### Exercise 4.6
 
-For $f(x,y)=\ln(x^2+y^2)$, calculate $f_{xy}$ and $f_{yx}$ wherever the function is defined. Evaluate them at $(1,1)$.
+For $f(x,y)=\ln(x^2+y^2)$, calculate $\dfrac{\partial^2 f}{\partial y\,\partial x}$ and $\dfrac{\partial^2 f}{\partial x\,\partial y}$ wherever the function is defined. Evaluate them at $(1,1)$.
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
 The domain excludes $(0,0)$. First derivatives are
-$$f_x=\frac{2x}{x^2+y^2},\qquad f_y=\frac{2y}{x^2+y^2}.$$
-Differentiate $f_x$ with respect to $y$ and $f_y$ with respect to $x$:
-$$f_{xy}=-\frac{4xy}{(x^2+y^2)^2},\qquad f_{yx}=-\frac{4xy}{(x^2+y^2)^2}.$$
+$$\frac{\partial f}{\partial x}=\frac{2x}{x^2+y^2},\qquad \frac{\partial f}{\partial y}=\frac{2y}{x^2+y^2}.$$
+Differentiate $\partial f/\partial x$ with respect to $y$ and $\partial f/\partial y$ with respect to $x$:
+$$\frac{\partial^2 f}{\partial y\,\partial x}=-\frac{4xy}{(x^2+y^2)^2},\qquad \frac{\partial^2 f}{\partial x\,\partial y}=-\frac{4xy}{(x^2+y^2)^2}.$$
 They agree, as expected for a smooth function on its domain. At $(1,1)$ each equals $-4/(2^2)=-1$.
 :::
 ::::
@@ -101,9 +101,9 @@ Find the tangent plane to $z=x^2+xy+y^2$ at $(x,y)=(1,2)$.
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
-The surface height is $f(1,2)=1+2+4=7$. Its partial derivatives are $f_x=2x+y$ and $f_y=x+2y$, giving $f_x(1,2)=4$ and $f_y(1,2)=5$. The tangent-plane formula is
-$$z=f(1,2)+f_x(1,2)(x-1)+f_y(1,2)(y-2),$$
-so $z=7+4(x-1)+5(y-2)$, equivalently $z=4x+5y-7$.
+The surface height is $f(1,2)=1+2+4=7$. Its partial derivatives are
+$$\frac{\partial f}{\partial x}=2x+y,\qquad \frac{\partial f}{\partial y}=x+2y.$$
+At $(1,2)$, their values are $4$ and $5$. The tangent plane is therefore $z=7+4(x-1)+5(y-2)$, equivalently $z=4x+5y-7$.
 :::
 ::::
 
@@ -114,9 +114,9 @@ Use a linear approximation at $(1,1)$ to estimate $\sqrt{4+(1.02)^2+(0.97)^2}$.
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
 Let $f(x,y)=\sqrt{4+x^2+y^2}$. At $(1,1)$, $f=\sqrt6$. The partial derivatives are
-$$f_x=\frac{x}{\sqrt{4+x^2+y^2}},\qquad f_y=\frac{y}{\sqrt{4+x^2+y^2}},$$
+$$\frac{\partial f}{\partial x}=\frac{x}{\sqrt{4+x^2+y^2}},\qquad \frac{\partial f}{\partial y}=\frac{y}{\sqrt{4+x^2+y^2}},$$
 so both equal $1/\sqrt6$ at $(1,1)$. The changes are $\Delta x=0.02$ and $\Delta y=-0.03$. Therefore
-$$f(1.02,0.97)\approx f(1,1)+f_x\Delta x+f_y\Delta y
+$$f(1.02,0.97)\approx f(1,1)+\left.\frac{\partial f}{\partial x}\right|_{(1,1)}\Delta x+\left.\frac{\partial f}{\partial y}\right|_{(1,1)}\Delta y
 =\sqrt6+\frac{0.02-0.03}{\sqrt6}
 =\sqrt6-\frac{0.01}{\sqrt6}\approx2.4454.$$
 :::
@@ -130,7 +130,7 @@ Let $z=x^2y$, with $x=t^2$ and $y=\sin t$. Use the multivariable chain rule to f
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
-The chain rule gives $dz/dt=z_x(dx/dt)+z_y(dy/dt)$. Here $z_x=2xy$, $z_y=x^2$, $dx/dt=2t$, and $dy/dt=\cos t$. Substituting $x=t^2$ and $y=\sin t$ gives
+The chain rule gives $\dfrac{dz}{dt}=\dfrac{\partial z}{\partial x}\dfrac{dx}{dt}+\dfrac{\partial z}{\partial y}\dfrac{dy}{dt}$. Here $\partial z/\partial x=2xy$, $\partial z/\partial y=x^2$, $dx/dt=2t$, and $dy/dt=\cos t$. Substituting $x=t^2$ and $y=\sin t$ gives
 $$\frac{dz}{dt}=(2t^2\sin t)(2t)+(t^2)^2\cos t=4t^3\sin t+t^4\cos t.$$
 At $t=1$, the answer is $4\sin1+\cos1$. Directly differentiating $z=t^4\sin t$ gives the same result.
 :::
@@ -142,11 +142,11 @@ Let $z=e^{xy}$, $x=u+v$, and $y=u-v$. Find $\partial z/\partial u$ and $\partial
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
-Since $z_x=ye^{xy}$ and $z_y=xe^{xy}$, the chain rule gives
-$$z_u=z_xx_u+z_yy_u=(x+y)e^{xy}=2u e^{u^2-v^2},$$
-because $x_u=y_u=1$ and $xy=(u+v)(u-v)=u^2-v^2$. Similarly, $x_v=1$ and $y_v=-1$, so
-$$z_v=(y-x)e^{xy}=-2v e^{u^2-v^2}.$$
-At $(1,2)$, $u^2-v^2=-3$. Thus $z_u(1,2)=2e^{-3}$ and $z_v(1,2)=-4e^{-3}$.
+Since $\partial z/\partial x=ye^{xy}$ and $\partial z/\partial y=xe^{xy}$, the chain rule gives
+$$\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial u}=(x+y)e^{xy}=2u e^{u^2-v^2},$$
+because $\partial x/\partial u=\partial y/\partial u=1$ and $xy=(u+v)(u-v)=u^2-v^2$. Similarly, $\partial x/\partial v=1$ and $\partial y/\partial v=-1$, so
+$$\frac{\partial z}{\partial v}=(y-x)e^{xy}=-2v e^{u^2-v^2}.$$
+At $(1,2)$, $u^2-v^2=-3$. Thus $\left.\dfrac{\partial z}{\partial u}\right|_{(1,2)}=2e^{-3}$ and $\left.\dfrac{\partial z}{\partial v}\right|_{(1,2)}=-4e^{-3}$.
 :::
 ::::
 
@@ -170,7 +170,7 @@ Find the absolute maximum and minimum of $f(x,y)=xy$ on the closed disk $x^2+y^2
 
 :::: {.content-visible unless-profile="student"}
 ::: {.callout-note collapse="true" title="Show solution"}
-The disk is compact and $f$ is continuous, so absolute extrema exist. Inside the disk, $f_x=y$ and $f_y=x$ vanish together only at $(0,0)$, where $f=0$. Nearby points with $x=y>0$ have $xy>0$, while points with $x=-y>0$ have $xy<0$, so the origin is a saddle point.
+The disk is compact and $f$ is continuous, so absolute extrema exist. Inside the disk, $\partial f/\partial x=y$ and $\partial f/\partial y=x$ vanish together only at $(0,0)$, where $f=0$. Nearby points with $x=y>0$ have $xy>0$, while points with $x=-y>0$ have $xy<0$, so the origin is a saddle point.
 
 On the boundary $x^2+y^2=4$, the inequalities $(x-y)^2\geq0$ and $(x+y)^2\geq0$ give $-2\leq xy\leq2$. Equality $xy=2$ occurs at $(\sqrt2,\sqrt2)$ and $(-\sqrt2,-\sqrt2)$. Equality $xy=-2$ occurs at $(\sqrt2,-\sqrt2)$ and $(-\sqrt2,\sqrt2)$. Thus the absolute maximum is $2$ and the absolute minimum is $-2$.
 :::
