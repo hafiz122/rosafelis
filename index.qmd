@@ -1,11 +1,13 @@
 ---
 title: "Rosafelis"
-subtitle: "Calculus problem sets, with every step shown"
+subtitle: "Calculus, probability and statistics problem sets"
 author: hafiz122
 toc: false
 ---
 
-Work through an exercise, then open **Show solution** to check the reasoning and calculations. Every chapter also has a problems-only PDF and a separate worked-solutions PDF.
+## Calculus
+
+Work through an exercise, then open **Show solution** to check the reasoning and calculations. Each calculus chapter also has a problems-only PDF and a separate worked-solutions PDF.
 
 :::: {.chapter-list}
 ::: {.chapter-item}
@@ -42,3 +44,9 @@ Multivariable functions, limits, tangent planes, the chain rule, and extrema.
 ::::
 
 The chapter order follows the supplied course outline. Chapters 1–3 review single-variable ideas before the multivariable material in Chapter 4.
+
+## MDA3014 · Probability and Statistics for Data Analytics
+
+Practice with questions from two exam papers. Each question includes its original exam reference.
+
+[Browse questions by topic](chapters/mda3014.qmd)

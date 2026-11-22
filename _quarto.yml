@@ -18,7 +18,7 @@ project:
 website:
   title: Rosafelis
   site-url: https://hafiz122.github.io/rosafelis/
-  description: Worked calculus problem sets by hafiz122
+  description: Calculus problem sets and MDA3014 probability and statistics past-paper questions
   navbar:
     title: Rosafelis
     left:
@@ -32,6 +32,8 @@ website:
         text: 3 · Polar
       - href: chapters/ch4.qmd
         text: 4 · Partial derivatives
+      - href: chapters/mda3014.qmd
+        text: MDA3014 · Statistics
   page-footer:
     left: "problem sets by hafiz122"
 

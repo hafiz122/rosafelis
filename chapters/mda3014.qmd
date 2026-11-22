@@ -1,0 +1,218 @@
+---
+title: "MDA3014 · Probability and Statistics for Data Analytics"
+subtitle: "Past-paper questions by topic"
+format:
+  html:
+    toc-title: Topics
+  pdf:
+    papersize: a4
+---
+
+These questions come from Universiti Malaysia Terengganu’s Semester I final examinations for 2022/2023 and 2025/2026. Each question keeps its original exam reference and marks.
+
+::: {.content-visible when-format="html"}
+<div class="downloads">
+<a href="../viewer.html?doc=mda3014-problems">View questions PDF</a>
+<a href="../pdfs/mda3014-problems.pdf" download>Download questions</a>
+</div>
+:::
+
+## Event probabilities and Venn diagrams
+
+### Newspaper readership
+
+*2022/2023 · Q1 · p. 2*
+
+Of 50 people surveyed, 25 read newspaper $A$, 16 read $B$, and 14 read $C$. Five read both $A$ and $B$, four read both $B$ and $C$, six read both $C$ and $A$, and two read all three.
+
+a. Sketch a Venn diagram showing these data. (1 mark)
+b. For a person chosen at random from the group, find the probability that they read
+
+    i. at least one of the newspapers (2 marks),
+    ii. exactly one of the newspapers (2 marks),
+    iii. only newspaper $A$ (1 mark).
+
+### Cinema and premiere tickets
+
+*2025/2026 · Part B, Q1 · p. 4*
+
+In a survey, 15% of participants had never bought either kind of ticket, 73% had bought cinema tickets, and 49% had never bought premiere tickets.
+
+a. For a participant chosen at random, find the probability that they had bought
+
+    i. cinema tickets or premiere tickets (3 marks),
+    ii. both cinema tickets and premiere tickets (4 marks),
+    iii. cinema tickets only (3 marks).
+
+b. Sketch a Venn diagram and label each region with its percentage. (3 marks)
+
+## Continuous random variables and expectation
+
+### Moments of a continuous random variable
+
+*2022/2023 · Q2 · p. 2*
+
+The continuous random variable $X$ has density $f(x)=(x+3)/20$ for $0\leq x\leq 4$. Compute each expectation.
+
+a. $E(X)$ (3 marks)
+b. $E(2X+5)$ (2 marks)
+c. $E(X^2)$ (3 marks)
+d. $E(X^2+2X-3)$ (2 marks)
+
+\newpage
+
+## Discrete distributions and binomial probabilities
+
+### Weekly magazine sales
+
+*2025/2026 · Part B, Q2 · pp. 4–5*
+
+A sales agent stocks 12 magazines each week and has regular orders for 9. The number of additional copies sold varies. Past sales give the following estimated probabilities.
+
+| Copies sold | 9 | 10 | 11 | 12 |
+|:------------|---:|---:|---:|---:|
+| Probability | 0.20 | 0.35 | 0.30 | 0.15 |
+
+a. Estimate the mean number of copies sold per week. (3 marks)
+b. The agent pays 85 cents per copy and sells each copy for RM1.45. Unsold copies are destroyed. Calculate the profit in a week when 11 copies are sold. (2 marks)
+
+### Distribution of a binomial count
+
+*2022/2023 · Q3 · p. 2*
+
+Let $Y\sim\operatorname{Bin}(4,0.8)$.
+
+a. Construct the probability distribution of $Y$ and compute its expectation and variance. (8 marks)
+b. Show that $E(Y)=np$ and $\operatorname{Var}(Y)=npq$, where $q=1-p$. (2 marks)
+
+### Frozen pie deliveries
+
+*2025/2026 · Part B, Q5 · p. 5 · 6 marks*
+
+Three percent of the frozen pies delivered to a canteen are contaminated. On a morning when 500 pies are delivered, find the probability that 15 or more are contaminated.
+
+## Normal probabilities
+
+### Areas under the standard normal curve
+
+*2025/2026 · Part A, Q1 · p. 2 · 20 marks*
+
+For a standard normal random variable $Z$, compute each probability.
+
+a. $P(-0.25 < Z < 0.25)$
+b. $P(0.00 < Z < 0.65)$
+c. $P(-1.90 < Z < 0.04)$
+d. $P(-0.49 < Z < 0.55)$
+e. $P\!\left(\dfrac{65-60}{\sqrt{625}} < Z < \dfrac{87-60}{\sqrt{625}}\right)$
+
+### Masses of packets
+
+*2022/2023 · Q4 · p. 3*
+
+Packet masses are normally distributed with mean 1.42 kg and standard deviation 0.025 kg.
+
+a. Find the probability that a randomly selected packet weighs between 1.37 kg and 1.45 kg. (5 marks)
+b. In a batch of 5,000 packets, how many would you expect to weigh less than 1.35 kg? (5 marks)
+
+\newpage
+
+## Sampling distributions of the mean
+
+### Samples from a normal population
+
+*2025/2026 · Part A, Q4 · p. 2 · 4 marks*
+
+A random sample $X_1,X_2,\ldots,X_{28}$ is drawn from $N(193,225)$, where 225 is the population variance. Compute $P(\bar X>200)$.
+
+### Students’ interest in online games
+
+*2025/2026 · Part A, Q3 · p. 2 · 5 marks*
+
+A researcher studying students’ interest in types of online games takes a random sample of 36 from a normal population with mean $\mu=155$ and variance $\sigma^2=125$. Find the probability that the sample mean exceeds 157.
+
+### Sample means for count data
+
+*2022/2023 · Q5 · p. 3*
+
+Thirty random observations are taken from each of the following distributions. In each case, find the probability that the sample mean exceeds 5.
+
+a. $Y$ counts the telephone calls made to a counselling service in one evening, with $Y\sim\operatorname{Poisson}(4.5)$. (4 marks)
+b. $Y$ counts the heads obtained in nine tosses of a fair coin. (6 marks)
+
+## Estimation and confidence intervals
+
+### A population proportion
+
+*2025/2026 · Part B, Q3 · p. 5*
+
+In a random sample of 200 students, 150 drove to college alone.
+
+a. Calculate the sample proportion who drove to college alone. (2 marks)
+b. Construct a 90% confidence interval for the population proportion who drove to college alone. (8 marks)
+
+### Mean and variance from height measurements
+
+*2022/2023 · Q6 · p. 3*
+
+Researchers measured the heights $x$, in centimetres, of a random sample of 200 men living in Malaysia. They obtained $\sum x=35{,}050$ and $\sum x^2=6{,}163{,}109$.
+
+a. Compute unbiased estimates of the population mean and variance of height. (4 marks)
+b. Construct an approximate 90% confidence interval for the population mean height. (5 marks)
+
+### Recovering information from a confidence interval
+
+*2025/2026 · Part B, Q4 · p. 5*
+
+Men’s heights in a district have mean $\mu$ cm and standard deviation $\sigma$ cm. A random sample of 100 men gave a 95% confidence interval of $(177.22,197.18)$ cm for $\mu$.
+
+a. Calculate the sample mean. (6 marks)
+b. Calculate $\sigma$. (2 marks)
+c. Calculate a 90% confidence interval for $\mu$. (6 marks)
+
+\newpage
+
+## Hypothesis tests for a population mean
+
+### Critical values of Student’s $t$
+
+*2025/2026 · Part A, Q2 · p. 2 · 6 marks*
+
+Find the critical $t$-value or values for each test.
+
+a. A left-tailed test with $\alpha=0.05$ and sample size $n=23$.
+b. A two-tailed test with $\alpha=0.01$ and 17 degrees of freedom.
+c. A two-tailed test with $\alpha=0.02$ and 7 degrees of freedom.
+d. A right-tailed test with $\alpha=0.1$ and sample size $n=5$.
+
+### A two-tailed $Z$-test
+
+*2025/2026 · Part A, Q5 · p. 3 · 8 marks*
+
+Give the five steps for conducting a two-tailed $Z$-test for a population mean at $\alpha=0.05$.
+
+### Statistics exam scores
+
+*2025/2026 · Part B, Q6 · p. 6 · 9 marks*
+
+All IT students at UMT took a statistics exam. A random sample of their scores gave the following results.
+
+| Sample variance $S^2$ | Sample size $n$ | Sample mean $\bar X$ |
+|----------------------:|----------------:|--------------------:|
+| 55 | 15 | 40 |
+
+Use a $t$-test at the 5% significance level to test whether the population mean score equals 45.
+
+## Chi-square goodness of fit
+
+### A binomial model for heifer calves
+
+*2022/2023 · Q7 · p. 4*
+
+A farmer recorded the number of heifer calves born to each cow during its first years of breeding.
+
+| Number of heifers | 0 | 1 | 2 | 3 | 4 | 5 |
+|:------------------|---:|---:|---:|---:|---:|---:|
+| Number of cows | 4 | 19 | 41 | 52 | 26 | 8 |
+
+a. At the 5% significance level, test whether a binomial distribution with $n=5$ and $p=0.5$ adequately models these data. (10 marks)
+b. If $n$ stays fixed at 5 and you estimate $p$ from the data, how does the test change? (5 marks)

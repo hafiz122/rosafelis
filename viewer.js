@@ -4,7 +4,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = './assets/pdf.worker.mjs';
 
 const params = new URLSearchParams(location.search);
 const doc = params.get('doc') ?? '';
-const valid = /^ch([1-4])-(problems|solutions)$/.exec(doc);
+const chapterMatch = /^ch([1-4])-(problems|solutions)$/.exec(doc);
+const isStatisticsBank = doc === 'mda3014-problems';
 const status = document.querySelector('#status');
 const canvas = document.querySelector('#pdf-canvas');
 const context = canvas.getContext('2d');
@@ -15,14 +16,17 @@ const controls = {
   zoomIn: document.querySelector('#zoom-in'),
 };
 
-if (!valid) {
-  status.textContent = 'Choose a PDF from a chapter page.';
+if (!chapterMatch && !isStatisticsBank) {
+  status.textContent = 'Choose a PDF from a problem set.';
   for (const control of Object.values(controls)) control.disabled = true;
 } else {
-  const chapter = Number(valid[1]);
-  const kind = valid[2] === 'problems' ? 'Problems' : 'Worked solutions';
-  document.querySelector('#document-title').textContent = `Chapter ${chapter} · ${kind}`;
-  document.title = `Chapter ${chapter} ${kind} · Rosafelis`;
+  let title = 'MDA3014 · Past-paper questions';
+  if (chapterMatch) {
+    const kind = chapterMatch[2] === 'problems' ? 'Problems' : 'Worked solutions';
+    title = `Chapter ${chapterMatch[1]} · ${kind}`;
+  }
+  document.querySelector('#document-title').textContent = title;
+  document.title = `${title} · Rosafelis`;
   const pdfUrl = new URL(`./pdfs/${doc}.pdf`, location.href).href;
   document.querySelector('#open-pdf').href = pdfUrl;
   document.querySelector('#download-pdf').href = pdfUrl;
